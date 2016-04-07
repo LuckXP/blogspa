@@ -22,7 +22,7 @@ var NavBar = React.createClass({
 			  <ul className="nav navbar-nav">
 			    { link }
 			  <li className="form-inline pull-xs-right">
-					    <button className="btn btn-success-outline" type="submit">Sign Up</button>
+					    <button onClick= { self.props.setActiveComponent.bind(null,'signUp' )} className="btn btn-success-outline" type="submit">Sign Up</button>
 					    <button onClick= { self.props.setActiveComponent.bind(null,'login' )} className="btn btn-success-outline" type="submit">Login</button>
 				</li> 
 			  </ul>

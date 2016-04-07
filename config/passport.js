@@ -57,7 +57,7 @@ module.exports = function(passport) {
                 return done(null, false, { message: 'wrong password. sorry.' }); // create the loginMessage and save it to session as flashdata
 
             // all is well, return successful user
-            return done(null, user);
+            return done(null, user, { message: 'you logged in' } );
         });
 
     }));
@@ -90,7 +90,7 @@ module.exports = function(passport) {
 
             // check to see if theres already a user with that email
             if (user) {
-                return done(null, false, req.send('That email is already taken.'));
+                return done(null, false, {message: 'That email is already taken.'});
             } else {
 
                 // if there is no user with that email
@@ -107,7 +107,7 @@ module.exports = function(passport) {
                 newUser.save(function(err) {
                     if (err)
                         throw err;
-                    return done(null, newUser);
+                    return done(null, newUser, { message: 'you signed up' });
                 });
             }
 

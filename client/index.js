@@ -28,7 +28,10 @@ var App = React.createClass({
         return <BlogApp />
         break;
     case 'login':
-        return <UserApp setActiveComponent={this.setActiveComponent} />
+        return <UserApp login={ true } setActiveComponent={this.setActiveComponent} />
+        break;
+    case 'signUp':
+        return <UserApp login={ false } setActiveComponent={this.setActiveComponent} />
         break;
     default:
        return <Welcome />

@@ -5,7 +5,7 @@ var UserApp = React.createClass({
     render: function() {
         return (
             <div>
-            	<UserLoginFormData setActiveComponent={this.props.setActiveComponent} />
+            	<UserLoginFormData login={this.props.login} setActiveComponent={this.props.setActiveComponent} />
             </div>
             )
     }
