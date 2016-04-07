@@ -34,6 +34,20 @@ module.exports = function(app, passport) {
        req.logout();
        res.redirect('/');
     });
+
+    app.get('/getUser', function(req, res){
+      if(req.user){
+        User.findById(req.user._id, function(err, user){
+          if(err){
+            console.log(err)
+          } else {
+            res.json(user)
+          }
+        })
+      } else {
+        res.json({user: "no user"})
+      }
+    })
     
 
 };
