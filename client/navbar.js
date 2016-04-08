@@ -21,7 +21,12 @@ var LogOut = React.createClass({
     },
     render: function() {
     	var self = this;
-			return (  <button onClick= {self.context.logOut} className="btn btn-success-outline" type="submit">log out</button> )
+			return (  
+				<div>
+				<button onClick= {self.context.logOut} className="btn btn-success-outline" type="submit">log out</button> 
+				<p> Logged in as: {self.props.userDispaly}</p>
+				</div>
+			)
 		}
 });
 
@@ -34,11 +39,14 @@ var NavBar = React.createClass({
     	var self = this;
       var logButtons;
       var user = self.context.user;
+      var userDispaly = null;
       console.log(user);
       if (user == null) {
       	logButtons = <LogIn setActiveComponent= { self.props.setActiveComponent } />;
       } else {
-      	logButtons = <LogOut setActiveComponent= { self.props.setActiveComponent } />;
+      	userDispaly = user.local.username;
+      	console.log('this is the logged in users username: ', userDispaly);
+      	logButtons = <LogOut setActiveComponent= { self.props.setActiveComponent } userDispaly={userDispaly} />;
       }
       
       var link = links.map(function(alink) {
