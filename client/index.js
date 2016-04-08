@@ -20,6 +20,11 @@ var App = React.createClass({
   		activeComponent: componentName
   	})
   },
+
+  getActiveComponent: function() {
+    return this.state.activeComponent;
+  },
+
   showWhichComponent: function() {
    switch(this.state.activeComponent) {
     case 'welcome':
@@ -44,7 +49,7 @@ var App = React.createClass({
         <Notifier>
           <UserAuth>  
             <div>
-              <NavBar setActiveComponent={ this.setActiveComponent } />
+              <NavBar setActiveComponent={ this.setActiveComponent } getActiveComponent= { this.getActiveComponent } />
               {this.showWhichComponent()}
             </div>
           </UserAuth> 
