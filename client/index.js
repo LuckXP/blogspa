@@ -5,6 +5,7 @@ var Notifier = require('./notifier');
 var Welcome = require('./welcome');
 var UserApp = require('./userApp');
 var UserAuth = require('./userAuth');
+var BlogApp = require('./blogApp');
 
 
 
