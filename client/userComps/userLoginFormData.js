@@ -12,7 +12,9 @@ var UserLoginFormData = React.createClass({
     	}
     },
     contextTypes: {
-        sendNotification: React.PropTypes.func.isRequired
+        sendNotification: React.PropTypes.func.isRequired,
+        logIn: React.PropTypes.func.isRequired,
+        signUp: React.PropTypes.func.isRequired
     },
     onEmailChange: function(event) {
     	this.setState({ email: event.target.value })
@@ -25,8 +27,16 @@ var UserLoginFormData = React.createClass({
     },
 
     submitUserToServer: function(e) {
-    	e.preventDefault();
+        const {setActiveComponent} = this.props
+        const {email, password, username} = this.state;
+        const {logIn, signUp} = this.context;
 
+    	e.preventDefault();
+        
+        const promise = this.props.login ? logIn(email, password) : signUp(email, password, username);
+        promise.done(() => setActiveComponent('welcome'));
+
+/*
     	var userData = {
 	    	email: this.state.email.trim(),
 			password: this.state.password.trim(),
@@ -46,6 +56,7 @@ var UserLoginFormData = React.createClass({
 			console.log(data);
 			self.context.sendNotification((self.props.login ? 'logged in failed: ' : 'sign up failed: ') + data.responseText);
 		})
+*/
     },
     render: function() {
         return (
