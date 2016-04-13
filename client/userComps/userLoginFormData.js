@@ -35,28 +35,6 @@ var UserLoginFormData = React.createClass({
         
         const promise = this.props.login ? logIn(email, password) : signUp(email, password, username);
         promise.done(() => setActiveComponent('welcome'));
-
-/*
-    	var userData = {
-	    	email: this.state.email.trim(),
-			password: this.state.password.trim(),
-            username: this.state.username ? this.state.username.trim() : null
-
-	   	};
-    	var self = this;
-    	$.ajax({
-    		url: self.props.login ? '/login' : '/signup' ,
-    		method: 'POST',
-    		data: userData
-    	}).done( function(data) {
-    		console.log(data);
-    		self.props.setActiveComponent('welcome');
-            self.context.sendNotification(self.props.login ? 'you logged in' : 'you signed up');
-		}).fail(function(data) {
-			console.log(data);
-			self.context.sendNotification((self.props.login ? 'logged in failed: ' : 'sign up failed: ') + data.responseText);
-		})
-*/
     },
     render: function() {
         return (
