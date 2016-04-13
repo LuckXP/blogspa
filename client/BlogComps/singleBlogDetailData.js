@@ -1,1 +1,0 @@
-singleBlogDetailData.js

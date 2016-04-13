@@ -5,7 +5,7 @@ var Notifier = require('./notifier');
 var Welcome = require('./welcome');
 var UserApp = require('./userApp');
 var UserAuth = require('./userAuth');
-var BlogApp = require('./blogApp');
+var Blog = require('./blogComp/blog.js');
 
 
 
@@ -32,7 +32,7 @@ var App = React.createClass({
         return <Welcome />
         break;
     case 'blog':
-        return <BlogApp />
+        return <Blog />
         break;
     case 'login':
         return <UserApp login={ true } setActiveComponent={this.setActiveComponent} />
