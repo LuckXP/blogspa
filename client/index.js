@@ -6,8 +6,9 @@ var Welcome = require('./welcome');
 var UserApp = require('./userApp');
 var UserAuth = require('./userAuth');
 var Blog = require('./blogComp/blog.js');
+var BlogList = require('./blogComp/blogList.js');
 
-
+require('./stylesheets/main.scss');
 
 
 var App = React.createClass({
@@ -39,6 +40,9 @@ var App = React.createClass({
         break;
     case 'signUp':
         return <UserApp login={ false } setActiveComponent={this.setActiveComponent} />
+        break;
+    case 'blogList':
+        return <BlogList />
         break;
     default:
        return <Welcome />

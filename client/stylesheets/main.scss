@@ -1,0 +1,120 @@
+
+.comments{
+	text-align: right;
+}
+.nav{
+	text-align: center;
+}
+.comments-border{
+	margin-top: 5%;
+	border-top: dotted 1px #95a5a6;
+	border-right: dotted 1px #95a5a6;
+	border-bottom: dotted 1px #95a5a6;
+	border-left: solid 2px #95a5a6;
+}
+
+.divider{
+	border-bottom: solid 1px black;
+}
+.pencil{
+	border: none;
+	text-align: right !important;
+}
+
+h3, h4{
+	font-family: "Optima";
+	text-align: center;
+}
+h1 {
+	font-family: "Chasing Embers Demo Version";
+}
+.font{
+	font-family: "Chasing Embers Demo Version";
+	margin-left: 20px;
+	font-size: 40px;
+	text-align: center;
+	color: black;
+}
+.footer{
+	font-family: "Optima";
+	color:white;
+	position: relative;
+	margin-top: 10%;
+}
+.brand{
+	font-size: 20px;
+	font-family: "Optima";
+	margin-top: 0px;
+}
+
+.optima{
+	font-family: "Optima";
+	font-size: 15px;
+}
+
+p, label, input {
+	font-family: "Optima";
+	color: black;
+}
+.login-form{
+	padding: 15px;
+}
+.login-button{
+	margin-left: 40px;
+	border: black; 
+	background-color: black;
+	color: white;
+	margin-bottom: 10px;
+}
+
+.text{
+	font-family: "Valencia Sans";
+	color: black;
+}
+
+.font-size-carousel{
+	font-size: 25px;
+}
+.didot{
+	font-family: "Didot";
+	color: black;
+}
+.active-user{
+	position: relative;
+	text-align: right !important;
+}
+.white{
+	color: white;
+	
+}
+.div1{
+	background-color: white;
+	padding: 20px 40px 20px 40px;
+	margin-bottom: 50px;
+	border-top: 1px solid #e6e6e6;
+}
+.black{
+	color: black !important;
+}
+
+.tweet-para{
+	float: right;
+}
+.heading{
+	background-color: grey;
+}
+
+
+@media(max-width: 767px){
+	.optima{
+	font-family: "Optima";
+	font-size: 15px;
+	color: white !important;
+	}
+}
+
+.foot-flex{
+	display: flex;
+	flex-wrap: wrap;
+
+}

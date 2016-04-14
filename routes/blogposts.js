@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var BlogPost = require('../models/blogpost');
 var user = require('../models/user');
+var Comment = require('../models/comments');
 
 router.route('/blogposts')//post a new blog post
 	.post(function(req, res) {

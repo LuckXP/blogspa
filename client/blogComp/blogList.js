@@ -23,16 +23,15 @@ var React = require('react');
 var BlogCard = require('./blogCard');
 
 function BlogList(props){
-
+	console.log('props in blogList', props)
 	var blogs = props.blogArray.map(function(item){
 		return <BlogCard
 				getId={ props.getId }
 				id={ item._id }
 				key={ item._id } 
-				author={ item.author } 
-				title={ item.title } 
-				content={ item.content }
-				date={ item.date } />
+				author={ item.author }
+				postBody={ item.postBody }
+				postDate={ item.postDate } />
 	})
 		return (
 			<div className="container">

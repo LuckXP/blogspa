@@ -19,24 +19,23 @@
 */
 
 var React = require('react');
-var Markdown = require('react-markdown');
 
+var ReactMarkdown = require('react-markdown');
 
 function BlogCard(props){
-		var content = props.content.substr(0,450) + '...';
-		return (
-		<div>
-			<div className="container col-xs-8 col-xs-offset-2">
-				<a onClick={ props.getId.bind(null,'showOneBlog', props.id) } className="black">
-					<h1 className="divider"> { props.title } </h1>
-				</a>
-				<p> Posted by <b>{ props.author }</b>, on <b>{ props.date }</b> </p>
-				<Markdown source={ content }/> 				
-			</div>
-			
-		</div>
+	console.log('this is blog card prop', props)
+  return (
 
-			)
-	};
+    <div className="card">
+      <img className="card-img-top" alt="Card image cap" />
+      <div className="card-block">
+        <h4 className="card-title">{props.postDate}</h4>
+        <ReactMarkdown source={props.postBody}/>
+        <a href="#" onClick={ props.getId.bind(null,'showOneBlog', props.id) } className="btn btn-primary">view</a>
+      </div>
+    </div>
+    )
+
+};
 
 module.exports = BlogCard;

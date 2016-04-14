@@ -67,10 +67,7 @@ var Blog = React.createClass({
 	render: function(){
 		return (
 		<div>
-
-			<div className="jumbotron container">
-				<h1>blog codinglotus</h1>
-			</div>
+			
 			<div className="container">
 			<BlogPostToggle toggleActiveComp={ this.toggleActiveComp } />
 			{ this.showComponent() }

@@ -31,9 +31,10 @@ var BlogListData = React.createClass({
 	loadBlogsFromServer: function(){
 		var self = this;
 		$.ajax({
-			url: '/api/blogPost',
+			url: '/api/blogposts',
 			method: 'GET'
 		}).done(function(data){
+			console.log('loaded blogs from server:', data);
 			self.setState({ blogArray: data })
 		})
 	},
