@@ -63,12 +63,16 @@ var Blog = React.createClass({
 	toggleActiveComp: function(name){
 		this.setState({activeComponent: name})
 	},
+	
+	getActiveComp: function() {
+		return this.state.activeComponent;
+	},
 
 	render: function(){
 		return (
 		<div>
 			<div className="container">
-			<BlogPostToggle toggleActiveComp={ this.toggleActiveComp } />
+			<BlogPostToggle toggleActiveComp={ this.toggleActiveComp } getActiveComp={ this.getActiveComp } />
 			{ this.showComponent() }
 			<br/>
 			</div>

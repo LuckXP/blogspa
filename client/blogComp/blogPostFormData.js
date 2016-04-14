@@ -22,8 +22,8 @@ var BlogPostFormData = React.createClass({
 		return {
 			author: null,
 			title: null,
-			content: null,
-			date: null
+			postBody: null,
+			postDate: null
 		}
 	},
 
@@ -37,11 +37,11 @@ var BlogPostFormData = React.createClass({
 	},
 
 	handleContentChange: function(e){
-		this.setState({ content: e.target.value })
+		this.setState({ postBody: e.target.value })
 	},
 
 	handleDateChange: function(e){
-		this.setState({ date: e.target.value })
+		this.setState({ postDate: e.target.value })
 	},
 
 	handleBlogSubmit: function(e){
@@ -50,19 +50,19 @@ var BlogPostFormData = React.createClass({
 		var blog = {};
 		blog.author = this.state.author.trim();
 		blog.title = this.state.title.trim();
-		blog.content = this.state.content.trim();
-		blog.date = this.state.date.trim();
+		blog.postBody = this.state.postBody.trim();
+		blog.postDate = this.state.postDate.trim();
 
 		console.log(blog);
 
 		this.handleNewBlogPost(blog);
-		this.setState({ author: '', title: '', content: '', date: ''})
+		this.setState({ author: '', title: '', postBody: '', postDate: ''})
 
 	},
 
 	handleNewBlogPost: function(blog){
 		$.ajax({
-			url: '/api/blogPost',
+			url: '/api/blogpost',
 			type: 'POST',
 			data: blog,
 			success: function(data){

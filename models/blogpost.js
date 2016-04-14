@@ -2,6 +2,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var BlogPost = new Schema({
+	title:{
+		type: string,
+	},
 	postDate: {
 		type: Date,
 		default: Date.now,

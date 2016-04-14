@@ -1,23 +1,52 @@
 var React = require('react');
 
+var BlogButton = React.createClass({
+	render: function () {
+		var self = this;
+		return (
+			<div className="container m-b-1">
+				<button type="button" className="btn btn-secondary"
+								onClick={ self.props.toggleActiveComp.bind(null, 'blogList') }>Blog</button>
+			</div>
+
+		)
+	}
+
+
+});
+
+var PostButton = React.createClass({
+	render: function () {
+		var self = this;
+		return (
+			<div className="container m-b-1">
+				<button type="button" className="btn btn-secondary"
+								onClick={ self.props.toggleActiveComp.bind(null, 'blogPostForm') }>Post</button>
+			</div>
+
+		)
+	}
+});
 
 var BlogPostToggle = React.createClass({
-	render: function(){
+	render: function() {
+		var self = this;
+		var currentComp = self.props.getActiveComp;
+		var correctButton = null;
+		console.log(self.props.getActiveComp());
+
+		if (currentComp() === 'blogList') {
+			correctButton = <PostButton toggleActiveComp={ self.props.toggleActiveComp }/>;
+		} else {
+			correctButton = <BlogButton toggleActiveComp={ self.props.toggleActiveComp }/>;
+		}
+		;
+
 		return (
-		<div className="container m-a-1">
-			<div className="container">
-					<button type="button" className="btn btn-secondary"
-					onClick={ this.props.toggleActiveComp.bind(null, 'blogList') }>
-					Blog List</button>
-		
-					<button type="button" className="btn btn-secondary"
-					onClick={ this.props.toggleActiveComp.bind(null, 'blogPostForm') }>
-					Post a Blog</button>
-		
+			<div>
+				{correctButton}
 			</div>
-				
-		</div>	
-			)
+		)
 	}
 
 });

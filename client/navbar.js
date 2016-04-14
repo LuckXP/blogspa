@@ -31,7 +31,7 @@ var LogOut = React.createClass({
 						<button onClick= {self.context.logOut} className="nav-link btn btn-success-outline" type="submit">log out</button> 
 					</li>
 					<li className="nav-item pull-xs-right marg-right">
-						<h5 className="nav-link"> Logged in as: {self.props.userDispaly}   </h5>
+						<h7 className="nav-link m-t-.8"> Logged in as: {self.props.userDispaly}   </h7>
 					</li>
 				</div>
 			)
