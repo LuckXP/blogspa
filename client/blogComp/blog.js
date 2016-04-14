@@ -67,7 +67,6 @@ var Blog = React.createClass({
 	render: function(){
 		return (
 		<div>
-			
 			<div className="container">
 			<BlogPostToggle toggleActiveComp={ this.toggleActiveComp } />
 			{ this.showComponent() }

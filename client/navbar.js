@@ -30,8 +30,8 @@ var LogOut = React.createClass({
 					<li className="nav-item pull-xs-right">
 						<button onClick= {self.context.logOut} className="nav-link btn btn-success-outline" type="submit">log out</button> 
 					</li>
-					<li className="nav-item pull-xs-right">	
-						<p className="nav-link"> Logged in as: {self.props.userDispaly}   </p>
+					<li className="nav-item pull-xs-right marg-right">
+						<h5 className="nav-link"> Logged in as: {self.props.userDispaly}   </h5>
 					</li>
 				</div>
 			)
@@ -77,15 +77,17 @@ var NavBar = React.createClass({
 			    }
     		});
       return (
-			 <nav className="navbar navbar-dark bg-inverse">
-			  <a className="navbar-brand" href="#">nothing</a>
-			  <ul className="nav navbar-nav">
-			    
-			  { linkList }
-			  { logButtons }
 
-			  </ul>
-			</nav>
+				<nav className="container navbar navbar-dark navbar-fixed-top bg-inverse myNavbar m-a-2">
+          <a className="navbar-brand" href="#">nothing</a>
+          <ul className="nav navbar-nav">
+
+          { linkList }
+          { logButtons }
+
+          </ul>
+			  </nav>
+
       )
     }
 

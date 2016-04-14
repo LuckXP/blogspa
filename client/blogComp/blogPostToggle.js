@@ -4,13 +4,13 @@ var React = require('react');
 var BlogPostToggle = React.createClass({
 	render: function(){
 		return (
-		<div>	
+		<div className="container m-a-1">
 			<div className="container">
-					<button className="black"
+					<button type="button" className="btn btn-secondary"
 					onClick={ this.props.toggleActiveComp.bind(null, 'blogList') }>
 					Blog List</button>
 		
-					<button className="black"
+					<button type="button" className="btn btn-secondary"
 					onClick={ this.props.toggleActiveComp.bind(null, 'blogPostForm') }>
 					Post a Blog</button>
 		

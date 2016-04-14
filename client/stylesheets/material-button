@@ -1,0 +1,13 @@
+.material-button {
+  box-shadow: 2px 2px .5px #888888;
+  transition: all 0.3s ease-in-out;
+
+
+  &:hover {
+    box-shadow: inset 8px 8px 6px #888888;
+    background-color: white;
+    transform: translateZ(-5);
+
+  }
+
+}

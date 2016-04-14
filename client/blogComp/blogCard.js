@@ -26,12 +26,12 @@ function BlogCard(props){
 	console.log('this is blog card prop', props)
   return (
 
-    <div className="card">
-      <img className="card-img-top" alt="Card image cap" />
+    <div className="card my-card">
+      
       <div className="card-block">
         <h4 className="card-title">{props.postDate}</h4>
         <ReactMarkdown source={props.postBody}/>
-        <a href="#" onClick={ props.getId.bind(null,'showOneBlog', props.id) } className="btn btn-primary">view</a>
+        <a href="#" onClick={ props.getId.bind(null,'showOneBlog', props.id) } className="btn btn-secondary material-button">view</a>
       </div>
     </div>
     )
