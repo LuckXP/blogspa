@@ -4,9 +4,8 @@
 
 
   &:hover {
-    box-shadow: inset 8px 8px 6px #888888;
+    box-shadow: inset 1px 1px .2px #888888;
     background-color: white;
-    transform: translateZ(-5);
 
   }
 

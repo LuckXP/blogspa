@@ -1,11 +1,12 @@
 .myNavbar {
-  opacity: .5;
-  transform: rotate3d(1, 2.0, 3.0, 5deg);
+  opacity: .7;
+  transform: rotate3d(1, 2.0, 3.0, 3deg);
+  box-shadow: 20px 20px 20px #888888;
   transition: all 0.3s ease-in-out;
 
 
   &:hover {
     opacity: .9;
-    transform: rotate3d(1, 8.0, 6.0, 7deg);
+    transform: rotate3d(9, 3.0, 6.0, 4deg);
   }
 }

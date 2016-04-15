@@ -15,10 +15,10 @@ var React = require('react');
 var BlogPostForm = React.createClass({
 	render: function(){
 		return(
-			<div>
-				<div className="container">
-			<form className="col-xs-8 col-xs-offset-2" onSubmit={ this.props.handleBlogSubmit }>
-			<h1 className="divider">Post a Blog</h1>
+
+				<div className="card card-block my-card">
+			<form onSubmit={ this.props.handleBlogSubmit }>
+			<h1 className="card-title">Post a Blog</h1>
   				<fieldset className="form-group">
     				<label for="formGroupExampleInput">Title</label>
     				<input type="text" className="form-control" onChange={ this.props.handleTitleChange } 
@@ -33,20 +33,20 @@ var BlogPostForm = React.createClass({
   				</fieldset>
   				<fieldset className="form-group">
     				<label for="formGroupExampleInput2">Date</label>
-    				<input type="text" className="form-control" onChange={ this.props.handleDateChange }
-    				value={ this.props.date }
+    				<input type="text" className="form-control" onChange={ this.props.handlePostDateChange }
+    				value={ this.props.postDate }
     				id="formGroupExampleInput2" placeholder="Date"/>
   				</fieldset>	
   				 <fieldset className="form-group">
     				<label for="formGroupExampleInput2">Content</label>
-    				<textarea type="text" className="form-control" onChange={ this.props.handleContentChange }
-    				value={ this.props.content }
+    				<textarea type="text" className="form-control" onChange={ this.props.handlePostBodyChange }
+    				value={ this.props.postBody }
     				id="formGroupExampleInput2" placeholder="Content"></textarea>
   				</fieldset>
   				<button className="btn btn-default" type="submit">Submit</button>
 			</form>
 			</div>
-			</div>
+
 			)
 	}
 });

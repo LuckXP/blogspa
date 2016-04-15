@@ -78,8 +78,8 @@ var NavBar = React.createClass({
     		});
       return (
 
-				<nav className="container navbar navbar-dark navbar-fixed-top bg-inverse myNavbar m-a-2">
-          <a className="navbar-brand" href="#">nothing</a>
+				<nav className="col-lg-8 col-lg-offset-2 col-md-11 col-xs-5 navbar navbar-dark navbar-fixed-top bg-inverse myNavbar m-t-2">
+          <a className="navbar-brand" href="#">jesse's</a>
           <ul className="nav navbar-nav">
 
           { linkList }

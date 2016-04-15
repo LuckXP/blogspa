@@ -27,7 +27,7 @@ function BlogCard(props){
   return (
 
     <div className="card my-card">
-      
+
       <div className="card-block">
         <h4 className="card-title">{props.postDate}</h4>
         <ReactMarkdown source={props.postBody}/>

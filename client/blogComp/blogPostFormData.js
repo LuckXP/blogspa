@@ -36,41 +36,41 @@ var BlogPostFormData = React.createClass({
 		this.setState({ title: e.target.value })
 	},
 
-	handleContentChange: function(e){
+	handlePostBodyChange: function(e){
 		this.setState({ postBody: e.target.value })
 	},
 
-	handleDateChange: function(e){
+	handlePostDateChange: function(e){
 		this.setState({ postDate: e.target.value })
 	},
 
 	handleBlogSubmit: function(e){
 		e.preventDefault();
 
-		var blog = {};
+		var blogPost = {};
 		blog.author = this.state.author.trim();
 		blog.title = this.state.title.trim();
 		blog.postBody = this.state.postBody.trim();
 		blog.postDate = this.state.postDate.trim();
 
-		console.log(blog);
+		console.log(blogPost);
 
-		this.handleNewBlogPost(blog);
+		this.handleNewBlogPost(blogPost);
 		this.setState({ author: '', title: '', postBody: '', postDate: ''})
 
 	},
 
-	handleNewBlogPost: function(blog){
+	handleNewBlogPost: function(blogPost){
 		$.ajax({
-			url: '/api/blogpost',
+			url: '/api/blogposts',
 			type: 'POST',
-			data: blog,
+			data: blogPost,
 			success: function(data){
 				this.props.toggleActiveComp('blogList');
 				console.log(data);
 			}.bind(this),
 			error: function(xhr, status, err){
-				console.error('/api/blogPost', status, err.toString())
+				console.error('/api/blogposts', status, err.toString())
 			}.bind(this)
 		})
 	},
@@ -82,8 +82,8 @@ var BlogPostFormData = React.createClass({
 				<BlogPostForm handleBlogSubmit={ this.handleBlogSubmit }
 				handleAuthorChange={ this.handleAuthorChange }
 				handleTitleChange={ this.handleTitleChange }
-				handleContentChange={ this.handleContentChange }
-				handleDateChange={ this.handleDateChange } />
+				handlePostBodyChange={ this.handlePostBodyChange }
+				handlePostDateChange={ this.handlePostDateChange } />
 			</div>
 			)
 	}
