@@ -4,8 +4,8 @@ var BlogButton = React.createClass({
 	render: function () {
 		var self = this;
 		return (
-			<div className="container m-b-1">
-				<button type="button" className="btn btn-secondary"
+			<div className="col-s-1 col-s-offset-11 col-xs-1 col-xs-offset-9 m-r-1">
+				<button type="button" className="btn btn-secondary clear-button btn-lg"
 								onClick={ self.props.toggleActiveComp.bind(null, 'blogList') }>Blog</button>
 			</div>
 
@@ -19,8 +19,8 @@ var PostButton = React.createClass({
 	render: function () {
 		var self = this;
 		return (
-			<div className="container m-b-1">
-				<button type="button" className="btn btn-secondary"
+			<div className="col-s-1 col-s-offset-11 col-xs-1 col-xs-offset-9 m-r-1">
+				<button type="button" className="btn btn-secondary clear-button btn-lg"
 								onClick={ self.props.toggleActiveComp.bind(null, 'blogPostForm') }>Post</button>
 			</div>
 

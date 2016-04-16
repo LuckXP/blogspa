@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var BlogPost = new Schema({
 	title:{
-		type: string,
+		type: String,
 	},
 	postDate: {
 		type: Date,
