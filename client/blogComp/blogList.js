@@ -34,7 +34,7 @@ function BlogList(props){
 				postDate={ item.postDate } />
 	})
 		return (
-			<div className="container">
+			<div>
 				{ blogs }
 			</div>
 			)

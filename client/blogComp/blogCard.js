@@ -31,7 +31,7 @@ function BlogCard(props){
       <div className="card-block">
         <h4 className="card-title">{props.postDate}</h4>
         <ReactMarkdown source={props.postBody}/>
-        <a href="#" onClick={ props.getId.bind(null,'showOneBlog', props.id) } className="btn btn-secondary material-button">view</a>
+        <a onClick={ props.getId.bind(null,'showOneBlog', props.id) } className="btn btn-secondary material-button">view</a>
       </div>
     </div>
     )

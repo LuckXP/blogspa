@@ -78,7 +78,7 @@ var NavBar = React.createClass({
     		});
       return (
 
-				<nav className="col-lg-8 col-lg-offset-2 col-md-11 col-xs-5 navbar navbar-dark navbar-fixed-top bg-inverse myNavbar m-t-2">
+				<nav className="col-xs-8 col-xs-offset-2 navbar navbar-dark navbar-fixed-top bg-inverse myNavbar">
           <a className="navbar-brand" href="#">jesse's</a>
           <ul className="nav navbar-nav">
 
