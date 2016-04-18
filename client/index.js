@@ -7,6 +7,7 @@ var UserApp = require('./userApp');
 var UserAuth = require('./userAuth');
 var Blog = require('./blogComp/blog.js');
 var BlogList = require('./blogComp/blogList.js');
+var Modal = require('./modal.js');
 
 require('./stylesheets/main.scss');
 
@@ -56,6 +57,7 @@ var App = React.createClass({
             <div>
               <NavBar setActiveComponent={ this.setActiveComponent } getActiveComponent= { this.getActiveComponent } />
               {this.showWhichComponent()}
+              <Modal setActiveComponent={ this.setActiveComponent } getActiveComponent= { this.getActiveComponent } />
             </div>
           </UserAuth> 
         </Notifier> 
