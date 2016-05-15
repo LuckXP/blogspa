@@ -14,26 +14,18 @@ var React = require('react');
 var BlogPostForm = require('./blogPostForm');
 
 var BlogPostFormData = React.createClass({
+	contextTypes: {
+    user: React.PropTypes.object
+  },
+
 	propTypes: {
 		toggleActiveComp: React.PropTypes.func.isRequired
 	},
 
 	getInitialState: function(){
 		return {
-			author: null,
-			title: null,
-			postBody: null,
-			postDate: null
+			postBody: null
 		}
-	},
-
-
-	handleAuthorChange: function(e){
-		this.setState({ author: e.target.value })
-	},
-
-	handleTitleChange: function(e){
-		this.setState({ title: e.target.value })
 	},
 
 	handlePostBodyChange: function(e){
@@ -48,15 +40,13 @@ var BlogPostFormData = React.createClass({
 		e.preventDefault();
 
 		var blogPost = {};
-		blog.author = this.state.author.trim();
-		blog.title = this.state.title.trim();
-		blog.postBody = this.state.postBody.trim();
-		blog.postDate = this.state.postDate.trim();
+		blogPost.author = this.context.user;
+		blogPost.postBody = this.state.postBody.trim();
 
 		console.log(blogPost);
 
 		this.handleNewBlogPost(blogPost);
-		this.setState({ author: '', title: '', postBody: '', postDate: ''})
+		this.setState({ postBody: '' })
 
 	},
 
@@ -80,10 +70,7 @@ var BlogPostFormData = React.createClass({
 		return (
 			<div>
 				<BlogPostForm handleBlogSubmit={ this.handleBlogSubmit }
-				handleAuthorChange={ this.handleAuthorChange }
-				handleTitleChange={ this.handleTitleChange }
-				handlePostBodyChange={ this.handlePostBodyChange }
-				handlePostDateChange={ this.handlePostDateChange } />
+				handlePostBodyChange={ this.handlePostBodyChange } />
 			</div>
 			)
 	}
